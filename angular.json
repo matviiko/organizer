@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "orginizer"
+    }
+  },
+  "defaultProject": "orginizer",
+  "cli": {
+    "analytics": "16c27789-d37c-46e7-ad78-05669c5a63a5"
+  }
 }
