@@ -1,14 +1,14 @@
 <p>
 
-  <i class="material-icons">
+  <i class="material-icons" (click)="go(-1)">
     arrow-left
   </i>
 
   <span>
-    lmmlnmlnkl
+    {{ dateService.date | async | momment }}
   </span>
 
-  <i class="material-icons">
+  <i class="material-icons" (click)="go(1)">
     arrow-right
   </i>
 </p>
