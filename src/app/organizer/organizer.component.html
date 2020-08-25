@@ -1,6 +1,9 @@
 <section>
   <header>
-    Orginizer: <strong> saqssasaSSSSSKALKDNK</strong>
+    Orginizer:
+    <strong>
+    {{ dateService.date | async | momment:'DD.MM.YYYY' }}
+    </strong>
     <hr />
   </header>
 
@@ -19,11 +22,14 @@
   </main>
 
   <footer>
-    <form>
-      <input type="text">
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <label>
+        <input type="text" formControlName="title">
+      </label>
 
       <button type="submit"
-      CLASS="btn btn-block btn-primary"
+      class="btn btn-block btn-primary"
+              [disabled]="form.invalid"
       >
         Add
       </button>
