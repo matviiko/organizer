@@ -8,7 +8,7 @@
   </header>
 
   <main>
-    <ul>
+    <ul *ngIf="tasks.length; else noTask">
       <li class="task"
       *ngFor="let task of tasks; let i = index"
       >
@@ -16,11 +16,14 @@
           <strong>{{i + 1}}</strong>
           {{task.title}}
         </span>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" (click)="remove(task)">
           Remove
         </button>
       </li>
     </ul>
+    <ng-template #noTask>
+      <p class="text-center">No tasks yet...</p>
+    </ng-template>
   </main>
 
   <footer>
